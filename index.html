@@ -4,57 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
     <title>Password Generator</title>
 </head>
 
 <body>
-    
-        <div class="container">
-            <h2> Grenerate a Random Password</h2>
-            <div class="result_container">
-                <span class="result"></span>
-                <button class="btn" id="clipboard">I</button>
+
+    <div class="container">
+        <h2> Grenerate a Random Password</h2>
+        <div class="result_container">
+            <span class="result"></span>
+            <button class="btn" id="clipboard">
+                <i class="far fa-clipboard"></i>
+            </button>
+        </div>
+
+        <div class="settings">
+
+            <div class="settings">
+                <label> Password Length</label>
+                <input type="number" id="length" min="7" max="15" value="15" />
+            </div>
+
+
+            <div class="settings">
+                <label> Include Uppercase</label>
+                <input type="checkbox" id="uppercase" checked />
             </div>
 
             <div class="settings">
-
-                <div class="settings">
-                    <label> Password Length</label>
-                    <input type="number" id="length" min="7" max="15" value="15" />
-                </div>
-
-
-                <div class="settings">
-                    <label> Include Uppercase</label>
-                    <input type="checkbox" id="uppercase" checked />
-                </div>
-
-                <div class="settings">
-                    <label> Include Lowercase</label>
-                    <input type="checkbox" id="lowercase" checked />
-                </div>
-
-                <div class="settings">
-                    <label> Include Numbers</label>
-                    <input type="checkbox" id="number" checked />
-                </div>
-
-                <div class="settings">
-                    <label> Include Symbols</label>
-                    <input type="checkbox" id="symbol" checked />
-                </div>
-
+                <label> Include Lowercase</label>
+                <input type="checkbox" id="lowercase" checked />
             </div>
 
+            <div class="settings">
+                <label> Include Numbers</label>
+                <input type="checkbox" id="number" checked />
+            </div>
 
-            <button class="btn btn-large"></button>
-
-
-
+            <div class="settings">
+                <label> Include Symbols</label>
+                <input type="checkbox" id="symbol" checked />
+            </div>
 
         </div>
-    
+
+
+        <button class="btn btn-large"></button>
+
+
+
+
+    </div>
+
 </body>
 
 </html>
