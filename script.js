@@ -33,7 +33,28 @@ function generatePassword(lower,upper,number,symbol, length){
     
     let typeCount = lower + upper + number +symbol
 
-    console.log(typeCount)
+    const typesArr = [{lower}, {upper}, {number}, {symbol}].filter((item)=>{
+        Object.values(item)[0]
+    })
+
+
+
+    if(typeCount===0){
+        return "";
+
+    }
+
+    for(let i=0; i<length ; i+typeCount){
+        typesArr.forEach((type)=>{
+            const keyFromRandomFun = Object.keys(type)[0]
+            generatedPassword += randomFunc[keyFromRandomFun]()
+        })
+    }
+
+    const finalPassword = generatedPassword.slice(0 ,length)
+
+    return finalPassword
+
 }
 
 //To generate lowercase letters you have to between 97 to 122 char-code
