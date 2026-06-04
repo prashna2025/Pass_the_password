@@ -2,25 +2,25 @@ const resultEL = document.getElementById('result')
 const lengthEL = document.getElementById('length')
 const uppercaseEL = document.getElementById('uppercase')
 const lowercaseEL = document.getElementById('lowercase')
-const numbersEL = document.getElementById('numbers')
-const symbolsEL = document.getElementById('symbols')
+const numberEL = document.getElementById('number')
+const symbolEL = document.getElementById('symbol')
 const generateEL = document.getElementById('generate')
 const clipboardEL = document.getElementById('clipboard')
 
 
-const randomFunc = {
-    lower: getRandomLowercase,
-    upper: getRandomUppercase,
-    number: getRandomNumbers,
-    symbols: getRandomSymbols
+const randomFunc= {
+    lower : getRandomLowercase,
+    upper : getRandomUppercase,
+    number : getRandomNumbers,
+    symbol : getRandomSymbols
 }
 
 generateEL.addEventListener('click', () => {
-    const length = +lengthEL.Value
+    const length = +lengthEL.value
     const hasLower = lowercaseEL.checked
     const hasUpper = uppercaseEL.checked;
-    const hasNumer = numbersEL.checked;
-    const hasSymbol = symbolsEL.checked;
+    const hasNumber = numberEL.checked;
+    const hasSymbol = symbolEL.checked;
 
 
 
@@ -29,12 +29,12 @@ generateEL.addEventListener('click', () => {
 })
 
 function generatePassword(lower,upper,number,symbol, length){
-    let generatePassword = ''
+    let generatedPassword = ''
     
     let typeCount = lower + upper + number +symbol
 
     const typesArr = [{lower}, {upper}, {number}, {symbol}].filter((item)=>{
-        Object.values(item)[0]
+        return Object.values(item)[0]
     })
 
 
@@ -44,7 +44,7 @@ function generatePassword(lower,upper,number,symbol, length){
 
     }
 
-    for(let i=0; i<length ; i+typeCount){
+    for(let i=0; i<length ; i+=typeCount){
         typesArr.forEach((type)=>{
             const keyFromRandomFun = Object.keys(type)[0]
             generatedPassword += randomFunc[keyFromRandomFun]()
