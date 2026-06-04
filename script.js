@@ -33,7 +33,7 @@ function generatePassword(lower,upper,number,symbol, length){
     
     let typeCount = lower + upper + number +symbol
 
-    console.log(type)
+    console.log(typeCount)
 }
 
 //To generate lowercase letters you have to between 97 to 122 char-code
